@@ -1,0 +1,13 @@
+
+#footer {
+    background: linear-gradient($color-background-header-2, $color-background-header-1);
+    border-radius: 50% 50% 0 0 / 80% 80% 0 0;
+    box-shadow: $color-shadow-default 0 -2px 8px;
+    font-size: 1rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    text-align: center;
+    text-shadow: $text-shadow;
+
+    a {color: $color-text-default;}
+}

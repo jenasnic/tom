@@ -1,0 +1,74 @@
+global.add: Ajouter
+global.add.error: Erreur lors de l'ajout
+global.add.success: Ajout OK
+global.create: Créer
+global.delete: Supprimer
+global.delete.confirm: Confirmer la suppression ?
+global.delete.error: Erreur lors de la suppression
+global.delete.success: Suppression OK
+global.edit: Modifier
+global.error: Erreur
+global.form.errors: Certains champs ne sont pas remplis correctement
+global.login: Se connecter
+global.logout: Se déconnecter
+global.new: Nouveau
+global.next: Suivant
+global.no_result_found: Aucun résultat trouvé
+global.previous: Précedent
+global.result_count: '{0} Aucun résultat|{1} 1 résultat|]1,Inf[ %count% résultats'
+global.save: Enregistrer
+global.save.error: Erreur lors de la sauvegarde
+global.save.success: Sauvegarde OK
+global.search: Rechercher
+global.send: Envoyer
+global.validate: Valider
+
+
+
+########
+# Back #
+########
+
+back.layout.footer: © 2019 thomas.sitarium.com
+back.layout.menu.back: Retour au site
+back.layout.menu.user: Utilisateurs
+
+back.home.card.user.title: Utilisateurs
+back.home.card.user.link: Gérer les utilisateurs
+back.home.card.user.content: "Gestion des comptes utilisateurs :
+<ul>
+    <li>Création de comptes</li>
+    <li>Modification des données utilisateur</li>
+    <li>Suppression/désactivation des comptes</li>
+</ul>"
+
+back.user.edit.title: Modification de l'utilisateur
+back.user.list.column.name: Nom complet
+back.user.list.title: Gestion des comptes utilisateurs
+
+form.user.edit.label.email: Email
+form.user.edit.label.firstname: Prénom
+form.user.edit.label.lastname: Nom
+form.user.edit.label.password.first: Mot de passe
+form.user.edit.label.password.second: Confirmation m.d.p.
+form.user.edit.label.roles: Rôles
+form.user.edit.label.username: Login
+
+
+
+#########
+# Front #
+#########
+
+front.layout.footer: © 2019 Sitarium
+front.layout.menu.home: Accueil
+
+front.error.403.message: Vous ne disposez pas des droits requis pour accéder à cette page.
+front.error.403.title: Accès refusé
+front.error.404.message: La page demandée n'existe pas.
+front.error.404.title: Page inconnue
+front.error.message: Une erreur est survenue.
+
+front.login.form.login: Login
+front.login.form.password: Mot de passe
+front.login.form.title: Connexion

@@ -1,0 +1,34 @@
+{#
+Displays grid with actions, input to search/filter results and grid results.
+Required :
+- string title : current page title.
+- array result : list of items to display.
+#}
+
+<nav class="level">
+    <div class="level-left">
+        <h1 class="title">{{ title }}</h1>
+    </div>
+    <div class="level-right">
+        <div>
+            {% block action %}{% endblock %}
+        </div>
+    </div>
+</nav>
+
+<div id="grid-wrapper">
+
+    <span>{{ 'global.result_count'|transchoice(result|length) }}</span>
+
+    <table class="grid table is-striped is-hoverable is-fullwidth">
+        <thead>
+            <tr>
+                {% block grid_header %}{% endblock %}
+            </tr>
+        </thead>
+        <tbody>
+            {% block grid_body %}{% endblock %}
+        </tbody>
+    </table>
+
+</div>

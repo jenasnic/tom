@@ -1,0 +1,25 @@
+
+// #header {
+//     transform: translateX(-30%) translateY(35%) rotateZ(-20deg);
+//     text-align: center;
+// 
+//     a {
+//         img {
+//             transition: 0.3s ease-in-out;
+//             max-width: 390px;
+//         }
+// 
+//         &:hover img {
+//             transform: scaleY(1.2);
+//         }
+//     }
+// }
+
+#home {
+}
+
+@media #{$media-small}
+{
+    #home {
+    }
+}

@@ -1,0 +1,41 @@
+
+/* Override Sindu (drag&drop) */
+.sindu_dragger table{
+    background: #eee !important;
+}
+
+#page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    #menu {
+        background: #ddd;
+        margin-bottom: 1.5rem;
+
+        .navbar-item .icon {margin-right: 0.5rem;}
+    }
+
+    #content {flex-grow: 1;}
+
+    #footer {
+        background: #ddd;
+        margin-top: 1.5rem;
+        padding: 1rem 1.5rem 2rem;
+    }
+}
+
+#home {
+    align-items: start;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .card {margin: 1rem 2rem;}
+}
+
+#grid-wrapper {
+    margin: 1.5rem 0;
+
+    .grid {margin: 1rem auto 2.5rem auto;}
+}

@@ -1,0 +1,49 @@
+
+$color-background-default: #93CCD2;     // ~blue
+// $color-background-default: #50AAB4;     // ~blue dark
+// $color-background-default: #E46126;     // ~rust (red/orange)
+// $color-background-default: #6F5E56;     // ~grey
+// $color-background-default: #77DD95;     // ~green
+
+$color-background-header-1: #64B37C;    // ~green dark
+$color-background-header-2: #83F1A4;    // ~green light
+$color-background-input: #ECECEC;       // ~white
+
+$color-button-active-1: #D85317;        // ~rust dark
+$color-button-active-2: #E98558;        // ~rust light
+$color-button-default-1: #D85317;       // ~rust dark
+$color-button-default-2: #E98558;       // ~rust light
+
+$color-border-active: #E46126;          // ~rust
+$color-border-default: #E46126;         // ~rust
+$color-border-input: #6F5E56;           // ~grey
+$color-border-popup: #6F5E56;           // ~grey
+
+$color-shadow-default: #333333;         // ~black light
+$color-shadow-dark: #000000;            // ~black
+
+$color-text-default: #FFF0EB;           // ~white (rust light)
+$color-text-input: #333333;             // ~black light
+$color-text-link: #E46126;              // ~rust
+$color-text-title: #64B37C;             // ~green dark
+
+$text-shadow: #858585 0.05rem 0.05rem 1px;
+$text-shadow-dark: #646464 0.05rem 0.05rem 1px;
+$text-shadow-darker: #242424 0.05rem 0.05rem 1px;
+
+$box-shadow: #858585 0 0.1rem 0.05rem;
+$box-shadow-darker: #242424 0 0.12rem 0.07rem;
+$box-shadow-popup: #FAFAFA 0 0 14px;
+
+$transparent-background-black: rgba(0, 0, 0, 0.22);
+$transparent-background-default: rgba(255, 255, 255, 0.22);
+$transparent-background-dark: rgba(0, 0, 0, 0.77);
+
+$large-screen-down: 1216px !default;
+$medium-screen-down: 769px !default;
+$medium-screen-up: 1215px !default;
+$small-screen-up: 768px !default;
+
+$media-large: "only screen and (min-width : #{$large-screen-down})" !default;
+$media-medium: "only screen and (min-width : #{$medium-screen-down}) and (max-width : #{$medium-screen-up})" !default;
+$media-small: "only screen and (max-width : #{$small-screen-up})" !default;

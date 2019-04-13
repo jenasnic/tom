@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}Back Office{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('build/css/admin.css') }}">
+        {% endblock %}
+    </head>
+    <body>
+        <div id="page">
+            {% include 'back/_menu.html.twig' %}
+            <div id="content" class="container">
+                {% include 'back/_message.html.twig' %}
+                {% block body %}{% endblock %}
+            </div>
+            {% include 'back/_footer.html.twig' %}
+        </div>
+
+        {# Bulma popup to display informations through modal window #}
+        <div id="popup" class="modal">
+            <div class="modal-background"></div>
+            <div class="modal-content box">
+            </div>
+            <button class="modal-close is-large" aria-label="close"></button>
+        </div>
+
+        {% block javascripts %}
+            <script src="{{ asset('build/js/admin.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>

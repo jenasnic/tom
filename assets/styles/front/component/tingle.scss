@@ -1,0 +1,25 @@
+.tingle-modal {
+    &__close {
+        font-size: 3rem;
+        &:hover {
+            .tingle-modal__closeIcon {color: $color-button-active-1;}
+        }
+    }
+    &__closeIcon {
+        color: $color-button-default-2;
+    }
+
+    .tingle-modal-box {
+        border: 2px solid $color-border-popup;
+        box-shadow: $box-shadow;
+        width: auto;
+        
+        &__content {
+            color: $color-text-default;
+            font-size: 1rem;
+            padding: 1rem 2rem;
+
+            * {color: $color-text-default;}
+        }
+    }
+}
