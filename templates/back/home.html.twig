@@ -25,6 +25,27 @@
         </footer>
     </div>
 
+    <div class="card">
+        <a href="{{ path('bo_book_list') }}">
+            <header class="card-header">
+                <p class="card-header-title">{{ 'back.home.card.book.title'|trans }}</p>
+                <span class="card-header-icon">
+                    <span class="icon">
+                        <i class="fas fa-book-open fa-lg"></i>
+                    </span>
+                </span>
+            </header>
+        </a>
+        <div class="card-content">
+            <div class="content">
+                {{ 'back.home.card.book.content'|trans|raw }}
+            </div>
+        </div>
+        <footer class="card-footer">
+            <a href="{{ path('bo_book_list') }}" class="card-footer-item">{{ 'back.home.card.book.link'|trans }}</a>
+        </footer>
+    </div>
+
 </div>
 
 {% endblock %}

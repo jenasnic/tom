@@ -1,0 +1,119 @@
+{#
+Allows to list all books. It allows to add/edit/delete book.
+Required :
+- books : list of all book available (as array).
+#}
+
+{% extends "admin.html.twig" %}
+
+{% block body %}
+
+    <nav class="level">
+        <div class="level-left">
+            <h1 class="title">{{ 'back.book.list.title'|trans }}</h1>
+        </div>
+        <div class="level-right">
+            <div>
+                <a id="new-quiz-button" class="button is-primary" href="{{ path('bo_book_add') }}">{{ 'global.new'|trans }}</a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="grid-wrapper">
+
+        <span>{{ 'global.result_count'|transchoice(books|length) }}</span>
+
+        <table
+            id="book-list"
+            class="table is-striped is-hoverable is-fullwidth"
+            data-reorder-url="{{ path('bo_book_reorder') }}"
+        >
+            <thead>
+                <tr>
+                    <th>{{ 'back.book.list.column.name'|trans }}</th>
+                    <th>{{ 'global.edit'|trans }}</th>
+                    <th>{{ 'global.delete'|trans }}</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for book in books %}
+                <tr data-id="{{ book.id }}">
+                    <td>
+                        <span class="icon">
+                            <i class="fas fa-arrows-alt"></i>
+                        </span>
+                        {{ book.name }}
+                    </td>
+                    <td>
+                        <a href="{{ path('bo_book_edit', { 'book': book.id }) }}">
+                            <span class="icon has-text-warning button">
+                                <i class="fas fa-edit"></i>
+                            </span>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ path('bo_book_delete', { 'book': book.id }) }}" onclick="return confirm('{{ 'global.delete.confirm'|trans }}');" >
+                            <span class="icon has-text-danger button">
+                                <i class="fas fa-trash-alt"></i>
+                            </span>
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+    </div>
+
+
+
+
+
+
+
+
+{#
+    <div id="book-list" data-reorder-url="{{ path('bo_book_reorder') }}">
+
+    {% embed 'back/form/_grid.html.twig' with {'result': books, 'title': 'back.book.list.title'|trans} %}
+
+        {% block action %}
+            <a id="new-quiz-button" class="button is-primary" href="{{ path('bo_book_add') }}">{{ 'global.new'|trans }}</a>
+        {% endblock %}
+
+        {% block grid_header %}
+            <th>{{ 'back.book.list.column.name'|trans }}</th>
+            <th>{{ 'global.edit'|trans }}</th>
+            <th>{{ 'global.delete'|trans }}</th>
+        {% endblock %}
+
+        {% block grid_body %}
+            {% for book in books %}
+                <tr>
+                    <td>
+                        {{ book.name }}
+                    </td>
+                    <td>
+                        <a href="{{ path('bo_book_edit', { 'book': book.id }) }}">
+                            <span class="icon has-text-warning button">
+                                <i class="fas fa-edit"></i>
+                            </span>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ path('bo_book_delete', { 'book': book.id }) }}" onclick="return confirm('{{ 'global.delete.confirm'|trans }}');" >
+                            <span class="icon has-text-danger button">
+                                <i class="fas fa-trash-alt"></i>
+                            </span>
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        {% endblock %}
+
+    {% endembed %}
+
+    </div>
+#}
+
+{% endblock %}

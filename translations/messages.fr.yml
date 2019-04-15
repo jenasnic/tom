@@ -6,6 +6,7 @@ global.delete: Supprimer
 global.delete.confirm: Confirmer la suppression ?
 global.delete.error: Erreur lors de la suppression
 global.delete.success: Suppression OK
+global.download: Télécharger
 global.edit: Modifier
 global.error: Erreur
 global.form.errors: Certains champs ne sont pas remplis correctement
@@ -14,6 +15,8 @@ global.logout: Se déconnecter
 global.new: Nouveau
 global.next: Suivant
 global.no_result_found: Aucun résultat trouvé
+global.order.error: Erreur lors du réordonnancement
+global.order.success: Réordonnancement OK
 global.previous: Précedent
 global.result_count: '{0} Aucun résultat|{1} 1 résultat|]1,Inf[ %count% résultats'
 global.save: Enregistrer
@@ -31,7 +34,21 @@ global.validate: Valider
 
 back.layout.footer: © 2019 thomas.sitarium.com
 back.layout.menu.back: Retour au site
+back.layout.menu.book: Books
 back.layout.menu.user: Utilisateurs
+
+back.book.edit.title: Modification du book
+back.book.list.column.name: Nom
+back.book.list.title: Gestion des books
+
+back.home.card.book.title: Books
+back.home.card.book.link: Gérer les books
+back.home.card.book.content: "Gestion des books :
+<ul>
+    <li>Création de books</li>
+    <li>Mises à jour des books</li>
+    <li>Suppression des books</li>
+</ul>"
 
 back.home.card.user.title: Utilisateurs
 back.home.card.user.link: Gérer les utilisateurs
@@ -45,6 +62,10 @@ back.home.card.user.content: "Gestion des comptes utilisateurs :
 back.user.edit.title: Modification de l'utilisateur
 back.user.list.column.name: Nom complet
 back.user.list.title: Gestion des comptes utilisateurs
+
+form.book.edit.label.name: Nom
+form.book.edit.label.description: Description
+form.book.edit.label.pictureFile: Image
 
 form.user.edit.label.email: Email
 form.user.edit.label.firstname: Prénom
