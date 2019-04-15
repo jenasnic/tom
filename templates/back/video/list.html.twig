@@ -1,40 +1,40 @@
 {#
-Allows to list all users. It allows to add/edit/delete user.
+Allows to list all videos. It allows to add/edit/delete video.
 Required :
-- users : list of all users available (as array).
+- videos : list of all videos available (as array).
 #}
 
 {% extends "admin.html.twig" %}
 
 {% block body %}
 
-    {% embed 'back/form/_grid.html.twig' with {'result': users, 'title': 'back.user.list.title'|trans} %}
+    {% embed 'back/form/_grid.html.twig' with {'result': videos, 'title': 'back.video.list.title'|trans} %}
 
         {% block action %}
-            <a id="new-quiz-button" class="button is-primary" href="{{ path('bo_user_add') }}">{{ 'global.new'|trans }}</a>
+            <a id="new-quiz-button" class="button is-primary" href="{{ path('bo_video_add') }}">{{ 'global.new'|trans }}</a>
         {% endblock %}
 
         {% block grid_header %}
-            <th>{{ 'back.user.list.column.name'|trans }}</th>
+            <th>{{ 'back.video.list.column.name'|trans }}</th>
             <th>{{ 'global.edit'|trans }}</th>
             <th>{{ 'global.delete'|trans }}</th>
         {% endblock %}
 
         {% block grid_body %}
-            {% for user in users %}
+            {% for video in videos %}
                 <tr>
                     <td>
-                        {{ user.displayName }}
+                        {{ video.title }}
                     </td>
                     <td>
-                        <a href="{{ path('bo_user_edit', { 'user': user.id }) }}">
+                        <a href="{{ path('bo_video_edit', { 'video': video.id }) }}">
                             <span class="icon has-text-warning button">
                                 <i class="fas fa-edit"></i>
                             </span>
                         </a>
                     </td>
                     <td>
-                        <a href="{{ path('bo_user_delete', { 'user': user.id }) }}" onclick="return confirm('{{ 'global.delete.confirm'|trans }}');" >
+                        <a href="{{ path('bo_video_delete', { 'video': video.id }) }}" onclick="return confirm('{{ 'global.delete.confirm'|trans }}');" >
                             <span class="icon has-text-danger button">
                                 <i class="fas fa-trash-alt"></i>
                             </span>

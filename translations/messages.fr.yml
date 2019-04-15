@@ -36,6 +36,7 @@ back.layout.footer: © 2019 thomas.sitarium.com
 back.layout.menu.back: Retour au site
 back.layout.menu.book: Books
 back.layout.menu.user: Utilisateurs
+back.layout.menu.video: Vidéos
 
 back.book.edit.title: Modification du book
 back.book.list.column.name: Nom
@@ -59,9 +60,21 @@ back.home.card.user.content: "Gestion des comptes utilisateurs :
     <li>Suppression/désactivation des comptes</li>
 </ul>"
 
+back.home.card.video.title: Vidéos
+back.home.card.video.link: Gérer les vidéos
+back.home.card.video.content: "Gestion des vidéos :
+<ul>
+    <li>Ajout/modification des vidéos</li>
+    <li>Suppression des vidéos</li>
+</ul>"
+
 back.user.edit.title: Modification de l'utilisateur
 back.user.list.column.name: Nom complet
 back.user.list.title: Gestion des comptes utilisateurs
+
+back.video.edit.title: Modification de la vidéo
+back.video.list.column.name: Titre
+back.video.list.title: Gestion des vidéos
 
 form.book.edit.label.name: Nom
 form.book.edit.label.description: Description
@@ -74,6 +87,11 @@ form.user.edit.label.password.first: Mot de passe
 form.user.edit.label.password.second: Confirmation m.d.p.
 form.user.edit.label.roles: Rôles
 form.user.edit.label.username: Login
+
+form.video.edit.label.title: Titre
+form.video.edit.label.description: Description
+form.video.edit.label.book: Book
+form.video.edit.label.videoFile: Vidéo
 
 
 

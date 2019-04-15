@@ -1,0 +1,18 @@
+{#
+Allows to add/edit video.
+Required :
+- video : FormView element based on UserType object (i.e. video to edit).
+#}
+
+{% extends "admin.html.twig" %}
+
+{% block body %}
+
+    <h1 class="title">{{ 'back.video.edit.title'|trans }}</h1>
+
+    {{ form_start(video) }}
+        {{ form_rest(video) }}
+        <input type="submit" class="button is-primary" value="{{ 'global.save'|trans }}"/>
+    {{ form_end(video) }}
+
+{% endblock %}
