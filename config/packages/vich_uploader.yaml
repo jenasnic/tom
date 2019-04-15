@@ -5,6 +5,13 @@ vich_uploader:
         books:
             uri_prefix: /userfiles/books
             upload_destination: '%kernel.project_dir%/public/userfiles/books'
+            namer: Vich\UploaderBundle\Naming\UniqidNamer
         videos:
             uri_prefix: /userfiles/videos
             upload_destination: '%kernel.project_dir%/public/userfiles/videos'
+            namer: Vich\UploaderBundle\Naming\UniqidNamer
+        sliders:
+            uri_prefix: /userfiles/sliders
+            upload_destination: '%kernel.project_dir%/public/userfiles/sliders'
+            namer: App\Service\Slider\PictureNamer
+#            namer: Vich\UploaderBundle\Naming\UniqidNamer

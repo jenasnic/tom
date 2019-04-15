@@ -20,6 +20,8 @@
         "axios": "^0.18.0",
         "babel-loader": "^8.0.5",
         "bulma": "^0.7.4",
+        "bulma-extensions": "^6.2.4",
+        "dropzone": "^5.5.1",
         "node-sass": "^4.11.0",
         "perfect-scrollbar": "^1.4.0",
         "sass-loader": "^7.1.0",

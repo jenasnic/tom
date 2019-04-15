@@ -1,0 +1,38 @@
+{#
+Allows to edit slider.
+Required :
+- slider : FormView element based on SliderType object (i.e. slider to edit).
+#}
+
+{% extends "admin.html.twig" %}
+
+{% block body %}
+
+    <h1 class="title">{{ 'back.slider.edit.title'|trans }}</h1>
+
+    {{ form_start(slider) }}
+        {{ form_rest(slider) }}
+        <input type="submit" class="button is-primary" value="{{ 'global.save'|trans }}"/>
+    {{ form_end(slider) }}
+
+    <div class="is-divider is-divider-title" data-content="{{ 'back.slider.picture.list.title'|trans }}"></div>
+
+    <form id="picture-upload-form" action="{{ path('bo_slider_picture_upload', { 'slider': slider.vars.value.id }) }}" class="dropzone">
+        <div class="file">
+            <label class="file-label">
+                <input type="file" class="file-input" name="file" multiple>
+                <span class="file-cta">
+                    <span class="file-icon">
+                        <i class="fas fa-upload"></i>
+                    </span>
+                    <span class="file-label">{{ 'global.upload'|trans }}</span>
+                </span>
+            </label>
+        </div>
+    </form>
+
+    <div id="picture-wrapper" data-reload-url="{{ path('bo_slider_picture_list', { 'slider': slider.vars.value.id }) }}">
+        {% include 'back/slider/picture/_list.html.twig' with { 'slider' : slider.vars.value } %}
+    </div>
+
+{% endblock %}

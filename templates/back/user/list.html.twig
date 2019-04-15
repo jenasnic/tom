@@ -11,7 +11,7 @@ Required :
     {% embed 'back/form/_grid.html.twig' with {'result': users, 'title': 'back.user.list.title'|trans} %}
 
         {% block action %}
-            <a id="new-quiz-button" class="button is-primary" href="{{ path('bo_user_add') }}">{{ 'global.new'|trans }}</a>
+            <a class="button is-primary" href="{{ path('bo_user_add') }}">{{ 'global.new'|trans }}</a>
         {% endblock %}
 
         {% block grid_header %}

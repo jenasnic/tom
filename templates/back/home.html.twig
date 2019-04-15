@@ -67,6 +67,27 @@
         </footer>
     </div>
 
+    <div class="card">
+        <a href="{{ path('bo_slider_list') }}">
+            <header class="card-header">
+                <p class="card-header-title">{{ 'back.home.card.slider.title'|trans }}</p>
+                <span class="card-header-icon">
+                    <span class="icon">
+                        <i class="fas fa-camera fa-lg"></i>
+                    </span>
+                </span>
+            </header>
+        </a>
+        <div class="card-content">
+            <div class="content">
+                {{ 'back.home.card.slider.content'|trans|raw }}
+            </div>
+        </div>
+        <footer class="card-footer">
+            <a href="{{ path('bo_slider_list') }}" class="card-footer-item">{{ 'back.home.card.slider.link'|trans }}</a>
+        </footer>
+    </div>
+
 </div>
 
 {% endblock %}

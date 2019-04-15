@@ -1,0 +1,45 @@
+{#
+Allows to list all pictures from a slider. It allows to edit/delete picture.
+Required :
+- slider : slider we want to display pictures.
+#}
+
+<table
+    id="picture-list"
+    class="table is-striped is-hoverable is-fullwidth"
+    data-reorder-url="{{ path('bo_slider_picture_reorder', { 'slider': slider.id }) }}"
+>
+    <thead>
+        <tr>
+            <th>{{ 'back.slider.picture.column.title'|trans }}</th>
+            <th>{{ 'global.edit'|trans }}</th>
+            <th>{{ 'global.delete'|trans }}</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for picture in slider.pictures %}
+        <tr data-id="{{ picture.id }}">
+            <td>
+                <span class="icon">
+                    <i class="fas fa-arrows-alt"></i>
+                </span>
+                {{ picture.title }}
+            </td>
+            <td>
+                <span data-edit-picture-url="{{ path('bo_slider_picture_edit', { 'picture': picture.id }) }}" class="level-item">
+                    <span class="icon has-text-warning button">
+                        <i class="fas fa-edit"></i>
+                    </span>
+                </span>
+            </td>
+            <td>
+                <span data-delete-picture-url="{{ path('bo_slider_picture_delete', { 'picture': picture.id }) }}" data-confirm-message="{{ 'global.delete.confirm'|trans }}" class="level-item">
+                    <span class="icon has-text-danger button">
+                        <i class="fas fa-trash-alt"></i>
+                    </span>
+                </a>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

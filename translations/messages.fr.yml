@@ -24,6 +24,7 @@ global.save.error: Erreur lors de la sauvegarde
 global.save.success: Sauvegarde OK
 global.search: Rechercher
 global.send: Envoyer
+global.upload: Upload
 global.validate: Valider
 
 
@@ -36,6 +37,7 @@ back.layout.footer: © 2019 thomas.sitarium.com
 back.layout.menu.back: Retour au site
 back.layout.menu.book: Books
 back.layout.menu.user: Utilisateurs
+back.layout.menu.slider: Diaporamas
 back.layout.menu.video: Vidéos
 
 back.book.edit.title: Modification du book
@@ -49,6 +51,14 @@ back.home.card.book.content: "Gestion des books :
     <li>Création de books</li>
     <li>Mises à jour des books</li>
     <li>Suppression des books</li>
+</ul>"
+
+back.home.card.slider.title: Diaporamas
+back.home.card.slider.link: Gérer les diaporamas
+back.home.card.slider.content: "Gestion des diaporamas :
+<ul>
+    <li>Ajout/modification des diaporamas</li>
+    <li>Suppression des diaporamas</li>
 </ul>"
 
 back.home.card.user.title: Utilisateurs
@@ -68,17 +78,31 @@ back.home.card.video.content: "Gestion des vidéos :
     <li>Suppression des vidéos</li>
 </ul>"
 
+back.slider.edit.title: Modification du diaporama
+back.slider.list.column.title: Titre
+back.slider.list.title: Gestion des diaporamas
+back.slider.list.create_form.placeholder: Saisissez le nom du diaporama
+back.slider.picture.edit.title: Modification de l'image
+back.slider.picture.list.title: Liste des images
+back.slider.picture.column.title: Titre
+
 back.user.edit.title: Modification de l'utilisateur
 back.user.list.column.name: Nom complet
 back.user.list.title: Gestion des comptes utilisateurs
 
 back.video.edit.title: Modification de la vidéo
-back.video.list.column.name: Titre
+back.video.list.column.title: Titre
 back.video.list.title: Gestion des vidéos
 
 form.book.edit.label.name: Nom
 form.book.edit.label.description: Description
 form.book.edit.label.pictureFile: Image
+
+form.slider.edit.label.title: Titre
+form.slider.edit.label.description: Description
+form.slider.edit.label.book: Book
+form.slider.picture.edit.label.title: Titre
+form.slider.picture.edit.label.description: Description
 
 form.user.edit.label.email: Email
 form.user.edit.label.firstname: Prénom

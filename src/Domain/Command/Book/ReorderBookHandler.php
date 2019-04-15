@@ -6,7 +6,7 @@ use App\Repository\BookRepository;
 use Doctrine\ORM\EntityManagerInterface;
 
 /**
- * Allows to reorder book (i.e. update rank property for books).
+ * Allows to reorder books (i.e. update rank property for books).
  */
 class ReorderBookHandler
 {

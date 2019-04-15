@@ -1,6 +1,6 @@
 
 /* Override Sindu (drag&drop) */
-.sindu_dragger table{
+.sindu_dragger table {
     background: #eee !important;
 }
 
@@ -34,8 +34,15 @@
     .card {margin: 1rem 2rem;}
 }
 
-#grid-wrapper {
+.grid-wrapper {
     margin: 1.5rem 0;
 
     .grid {margin: 1rem auto 2.5rem auto;}
+}
+
+.is-divider-title {margin: 3rem 0;}
+
+.is-divider-title[data-content]::after {
+    font-size: 1.4rem;
+    padding: 0 1rem;
 }
