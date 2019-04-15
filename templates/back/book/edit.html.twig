@@ -1,0 +1,18 @@
+{#
+Allows to add/edit book.
+Required :
+- book : FormView element based on BookType object (i.e. book to edit).
+#}
+
+{% extends "admin.html.twig" %}
+
+{% block body %}
+
+    <h1 class="title">{{ 'back.book.edit.title'|trans }}</h1>
+
+    {{ form_start(book) }}
+        {{ form_rest(book) }}
+        <input type="submit" class="button is-primary" value="{{ 'global.save'|trans }}"/>
+    {{ form_end(book) }}
+
+{% endblock %}

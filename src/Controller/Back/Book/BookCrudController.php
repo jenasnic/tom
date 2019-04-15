@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Controller\Back;
+namespace App\Controller\Back\Book;
 
-use App\Entity\User;
-use App\Form\UserType;
-use App\Repository\UserRepository;
+use App\Entity\Book;
+use App\Form\BookType;
+use App\Repository\BookRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -12,47 +12,41 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
-class UserController extends AbstractController
+class BookCrudController extends AbstractController
 {
     /**
-     * @Route("/admin/user/list", name="bo_user_list", methods="GET")
-     *
-     * @param UserRepository $userRepository
-     *
-     * @return Response
-     */
-    public function listAction(UserRepository $userRepository): Response
-    {
-        return $this->render('back/user/list.html.twig', ['users' => $userRepository->findAll()]);
-    }
-
-    /**
-     * @Route("/admin/user/add", name="bo_user_add")
-     * @Route("/admin/user/edit/{user}", requirements={"user" = "\d+"}, name="bo_user_edit")
+     * @Route("/admin/book/add", name="bo_book_add")
+     * @Route("/admin/book/edit/{book}", requirements={"book" = "\d+"}, name="bo_book_edit")
      *
      * @param Request $request
      * @param EntityManagerInterface $entityManager
+     * @param BookRepository $bookRepository
      * @param TranslatorInterface $translator
-     * @param User|null $user
+     * @param Book|null $book
      *
      * @return Response
      */
     public function addOrEditAction(
         Request $request,
         EntityManagerInterface $entityManager,
+        BookRepository $bookRepository,
         TranslatorInterface $translator,
-        User $user = null
+        Book $book = null
     ): Response {
-        if (null === $user) {
-            $user = new User();
+        if (null === $book) {
+            $book = new Book();
         }
 
-        $form = $this->createForm(UserType::class, $user);
+        $form = $this->createForm(BookType::class, $book);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             try {
-                $entityManager->persist($user);
+                if (null === $book->getId()) {
+                    $book->setRank($bookRepository->getMaxRank() + 1);
+                }
+
+                $entityManager->persist($book);
                 $entityManager->flush();
 
                 $this->addFlash('info', $translator->trans('global.save.success'));
@@ -60,25 +54,25 @@ class UserController extends AbstractController
                 $this->addFlash('error', $translator->trans('global.save.error'));
             }
 
-            return $this->redirectToRoute('bo_user_list');
+            return $this->redirectToRoute('bo_book_list');
         }
 
-        return $this->render('back/user/edit.html.twig', ['user' => $form->createView()]);
+        return $this->render('back/book/edit.html.twig', ['book' => $form->createView()]);
     }
 
     /**
-     * @Route("/admin/user/delete/{user}", requirements={"user" = "\d+"}, name="bo_user_delete")
+     * @Route("/admin/book/delete/{book}", requirements={"book" = "\d+"}, name="bo_book_delete")
      *
      * @param EntityManagerInterface $entityManager
      * @param TranslatorInterface $translator
-     * @param User $user
+     * @param Book $book
      *
      * @return Response
      */
-    public function deleteAction(EntityManagerInterface $entityManager, TranslatorInterface $translator, User $user): Response
+    public function deleteAction(EntityManagerInterface $entityManager, TranslatorInterface $translator, Book $book): Response
     {
         try {
-            $entityManager->remove($user);
+            $entityManager->remove($book);
             $entityManager->flush();
 
             $this->addFlash('info', $translator->trans('global.delete.success'));
@@ -86,6 +80,6 @@ class UserController extends AbstractController
             $this->addFlash('error', $translator->trans('global.delete.error'));
         }
 
-        return $this->redirectToRoute('bo_user_list');
+        return $this->redirectToRoute('bo_book_list');
     }
 }
