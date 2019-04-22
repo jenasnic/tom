@@ -1,0 +1,63 @@
+{#
+Allows to list all sliders. It allows to add/edit/delete slider.
+Required :
+- sliders : list of all sliders available (as array).
+#}
+
+{% extends "admin.html.twig" %}
+
+{% block body %}
+
+    {% embed 'back/form/_grid.html.twig' with {'result': sliders, 'title': 'back.slider.list.title'|trans} %}
+
+        {% block action %}
+            <span id="new-slider-button" class="button is-primary">{{ 'global.new'|trans }}</span>
+        {% endblock %}
+
+        {% block grid_header %}
+            <th>{{ 'back.slider.list.column.title'|trans }}</th>
+            <th>{{ 'global.edit'|trans }}</th>
+            <th>{{ 'global.delete'|trans }}</th>
+        {% endblock %}
+
+        {% block grid_body %}
+            {% for slider in sliders %}
+                <tr>
+                    <td>
+                        {{ slider.title }}
+                    </td>
+                    <td>
+                        <a href="{{ path('bo_slider_edit', { 'slider': slider.id }) }}">
+                            <span class="icon has-text-warning button">
+                                <i class="fas fa-edit"></i>
+                            </span>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ path('bo_slider_delete', { 'slider': slider.id }) }}" onclick="return confirm('{{ 'global.delete.confirm'|trans }}');" >
+                            <span class="icon has-text-danger button">
+                                <i class="fas fa-trash-alt"></i>
+                            </span>
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        {% endblock %}
+
+    {% endembed %}
+
+    <div class="is-hidden">
+        {# Form to add new slider (displayed through popup) #}
+        <form id="new-slider-form" action="{{ path('bo_slider_create') }}" method="POST">
+            <div class="field has-addons">
+                <div class="control is-expanded">
+                    <input id="title" name="title" type="text" class="input" placeholder="{{ 'back.slider.list.create_form.placeholder'|trans }}" />
+                </div>
+                <div class="control">
+                    <input type="submit" class="button" value="{{ 'global.create'|trans }}" disabled/>
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

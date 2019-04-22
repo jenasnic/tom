@@ -2,7 +2,7 @@ import axios from 'axios';
 import tableDragger from 'table-dragger'
 
 /**
- * Allows to initialize drag and drop feature to reorder quiz list.
+ * Allows to initialize drag and drop feature to reorder book list.
  */
 const initBooksReordering = () => {
     const dragger = tableDragger(document.getElementById('book-list'), {
@@ -19,10 +19,10 @@ const initBooksReordering = () => {
 };
 
 /**
- * Allows to reorder quiz after drag and drop on list.
+ * Allows to reorder books after drag and drop on list.
  * NOTE : new order is directly saved in BO using ajax call...
  *
- * @param reorderUrl URL to call to reorder quiz.
+ * @param reorderUrl URL to call to reorder books.
  * @param from Index of first row we are changing order (starting 1 for first row, not 0).
  * @param end Index of last row we are changing order.
  */

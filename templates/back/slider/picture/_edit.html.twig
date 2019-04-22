@@ -1,0 +1,12 @@
+{#
+Allows to edit picture.
+Required :
+- picture : FormView element based on PictureType object (i.e. picture to edit).
+#}
+
+<h1 class="title">{{ 'back.slider.picture.edit.title'|trans }}</h1>
+
+{{ form_start(picture) }}
+    {{ form_rest(picture) }}
+    <input type="submit" class="button is-primary" value="{{ 'global.save'|trans }}"/>
+{{ form_end(picture) }}
