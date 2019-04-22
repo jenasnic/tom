@@ -1,29 +1,55 @@
-{% extends "base.html.twig" %}
+<!DOCTYPE html>
 
-{% block body %}
+<html>
 
-    {% if error %}
-        <div class="error">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}Back Office{% endblock %}</title>
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('css/admin') }}
+        {% endblock %}
+    </head>
 
-    <h1>{{ 'front.login.form.title'|trans }}</h1>
+    <body>
 
-    <form id="login-form" action="{{ path('login_check') }}" method="post">
-        <div class="field">
-            <label for="username">{{ 'front.login.form.login'|trans }}</label>
-            <div class="control">
-                <input type="text" id="username" name="_username" value="{{ last_username }}" />
+        <div id="login-form" class="hero has-text-centered">
+
+            <div class="hero-head">
+                <h1 class="title">{{ 'front.login.form.title'|trans }}</h1>
             </div>
-        </div>
-        <div class="field">
-            <label for="password">{{ 'front.login.form.password'|trans }}</label>
-            <div class="control">
-                <input type="password" id="password" name="_password" />
-            </div>
-        </div>
-        <div class="form-buttons">
-            <button type="submit" class="button">{{ 'global.login'|trans }}</button>
-        </div>
-    </form>
 
-{% endblock %}
+            <div class="hero-body">
+
+                {% if error %}
+                    <div class="error">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                {% endif %}
+
+                <form action="{{ path('login_check') }}" method="post" class="has-text-centered">
+                    <div class="field">
+                        <label for="username" class="label">{{ 'front.login.form.login'|trans }}</label>
+                        <div class="control">
+                            <input type="text" id="username" name="_username" value="{{ last_username }}" class="input" />
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="password" class="label">{{ 'front.login.form.password'|trans }}</label>
+                        <div class="control">
+                            <input type="password" id="password" name="_password" class="input" />
+                        </div>
+                    </div>
+                    <button type="submit" class="button is-primary">{{ 'global.login'|trans }}</button>
+                </form>
+
+            </div>
+
+            <div class="hero-foot">
+                {{ 'back.layout.footer'|trans }}
+            </div>
+
+        </div>
+
+    </body>
+
+</html>
