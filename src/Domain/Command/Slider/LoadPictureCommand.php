@@ -29,6 +29,7 @@ class LoadPictureCommand
         $this->file = $file;
         $this->slider = $slider;
     }
+
     /**
      * @return UploadedFile
      */

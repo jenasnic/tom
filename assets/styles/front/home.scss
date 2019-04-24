@@ -1,25 +1,99 @@
 
-// #header {
-//     transform: translateX(-30%) translateY(35%) rotateZ(-20deg);
-//     text-align: center;
-// 
-//     a {
-//         img {
-//             transition: 0.3s ease-in-out;
-//             max-width: 390px;
-//         }
-// 
-//         &:hover img {
-//             transform: scaleY(1.2);
-//         }
-//     }
-// }
+#book-wrapper {
+    border-left: 1px solid $color-border-container;
+    border-right: 1px solid $color-border-container;
+    margin: 0 auto;
+    position: relative;
+    width: 960px;
 
-#home {
+    .arrow {
+        position: absolute;
+        top: 40%;
+
+        &.glider-prev {left: -5rem;}
+        &.glider-next {right: -5rem;}
+
+        span {cursor: pointer;}
+    }
+
+    #book-glider {
+        overflow: hidden;
+        padding-top: 5rem;
+        margin-top: -2rem;
+
+        .book-item {
+            align-items: center;
+            background: linear-gradient($color-button-default-1, $color-button-default-2);
+            border-radius: 2rem;
+            display: flex;
+            flex-direction: column;
+            margin: 1rem 2rem;
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+
+            img {
+                max-width: 200px;
+                border: 10px solid #fefefe;
+            }
+
+            span {
+                padding: 1rem;
+                font-weight: bold;
+            }
+
+            &.left-1, &.right-1 {transform: translate(0, -50px);}
+            &.left-2, &.right-2 {
+                transform: translate(0, -200px);
+                opacity: 0;
+            }
+        }
+    }
+}
+
+#mobile-wrapper {display: none;}
+
+@media #{$media-medium}
+{
+    #book-wrapper {
+        width: 320px;
+
+        #book-glider {
+            padding-top: 1rem;
+            margin-top: 0;
+
+            .book-item {
+                transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+                &.left-1, &.right-1 {transform: none;}
+            }
+        }
+    }
 }
 
 @media #{$media-small}
 {
-    #home {
+    #book-wrapper {display: none;}
+
+    #mobile-wrapper {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+
+        .book-item {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            margin: 0.75rem;
+
+            &:first-child {margin-top: 2rem;}
+
+            img {
+                max-width: 200px;
+                border: 10px solid #fefefe;
+            }
+
+            span {
+                padding: 0.5rem;
+                font-weight: bold;
+            }
+        }
     }
 }

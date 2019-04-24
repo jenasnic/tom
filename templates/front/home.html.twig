@@ -1,9 +1,39 @@
+{#
+Required :
+- books : list of all books available (as array).
+#}
+
 {% extends "base.html.twig" %}
 
 {% block body %}
 
-    <div id="home" class="center">
+    <div id="book-wrapper">
 
+        <div class="arrow glider-prev">
+            <span class="icon"><i class="fas fa-arrow-alt-circle-left fa-lg"></i></span>
+        </div>
+        <div class="arrow glider-next">
+            <span class="icon"><i class="fas fa-arrow-alt-circle-right fa-lg"></i></span>
+        </div>
+
+        <div id="book-glider" data-count="{{ books|length }}">
+            {% for book in books %}
+                <div class="book-item" data-rank="{{ loop.index0 }}">
+                    <img src="{{ vich_uploader_asset(book, 'pictureFile') }}" alt="{{ book.name }}" />
+                    <span>{{ book.name }}</span>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+    <div id="mobile-wrapper">
+        {% for book in books %}
+            <div class="book-item" data-rank="{{ loop.index0 }}">
+                <img src="{{ vich_uploader_asset(book, 'pictureFile') }}" alt="{{ book.name }}" />
+                <span>{{ book.name }}</span>
+            </div>
+        {% endfor %}
     </div>
 
 {% endblock %}

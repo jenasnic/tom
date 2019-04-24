@@ -12,7 +12,7 @@ class PictureNamer implements NamerInterface
     use FileExtensionTrait;
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function name($object, PropertyMapping $mapping): string
     {
@@ -41,8 +41,7 @@ class PictureNamer implements NamerInterface
         $i = 1;
         do {
             $fileName = sprintf('slider_%03d_picture_%03d.%s', $sliderId, $i++, $extension);
-        }
-        while (file_exists($directory.DIRECTORY_SEPARATOR.$fileName));
+        } while (file_exists($directory.DIRECTORY_SEPARATOR.$fileName));
 
         return $fileName;
     }

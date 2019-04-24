@@ -9,7 +9,7 @@ use Vich\UploaderBundle\Naming\DirectoryNamerInterface;
 class PictureDirectoryNamer implements DirectoryNamerInterface
 {
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function directoryName($object, PropertyMapping $mapping): string
     {

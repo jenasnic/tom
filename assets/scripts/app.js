@@ -1,1 +1,1 @@
-import './front/menu';
+import './front/home';
