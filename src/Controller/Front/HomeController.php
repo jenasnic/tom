@@ -2,6 +2,7 @@
 
 namespace App\Controller\Front;
 
+use App\Repository\BookRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -13,8 +14,8 @@ class HomeController extends AbstractController
      *
      * @return Response
      */
-    public function homeAction(): Response
+    public function homeAction(BookRepository $bookRepository): Response
     {
-        return $this->render('front/home.html.twig');
+        return $this->render('front/home.html.twig', ['books' => $bookRepository->findAll()]);
     }
 }
