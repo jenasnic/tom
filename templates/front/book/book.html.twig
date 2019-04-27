@@ -1,0 +1,65 @@
+{#
+Required :
+- Book book : book to display.
+- Slider slider : slider for current book.
+- Video[] videos : videos for current book.
+#}
+
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+    <div id="book-tabs">
+        <span data-tab="tab-slider" class="icon">
+            <i class="fas fa-camera fa-3x button" {{ slider ? '' : 'disabled' }}></i>
+        </span>
+        <span class="separator"></span>
+        <span data-tab="tab-videos" class="icon">
+            <i class="fas fa-video fa-3x button" {{ (videos|length > 0) ? '' : 'disabled' }}></i>
+        </span>
+    </div>
+
+    {% if slider %}
+    <div id="tab-slider" class="tab active">
+        <div id="book-slider" class="glide">
+            <div class="glide__track" data-glide-el="track">
+                <ul class="glide__slides">
+                    {% for picture in slider.pictures %}
+                        <li class="slider-item glide__slide">
+                            <img src="{{ vich_uploader_asset(picture, 'pictureFile') }}" alt="{{ picture.title }}" />
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div id="slider-control" data-glide-el="controls">
+                <span data-glide-dir="<<">
+                    <span class="icon"><i class="fas fa-angle-double-left fa-2x button"></i></span>
+                </span>
+                <span data-glide-dir="<">
+                    <span class="icon"><i class="fas fa-angle-left fa-2x button"></i></span>
+                </span>
+                <span data-glide-dir=">">
+                    <span class="icon"><i class="fas fa-angle-right fa-2x button"></i></span>
+                </span>
+                <span data-glide-dir=">>">
+                    <span class="icon"><i class="fas fa-angle-double-right fa-2x button"></i></span>
+                </span>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if videos|length > 0 %}
+    <div id="tab-videos" class="tab">
+        <div id="book-videos">
+        {% for video in videos %}
+            <video width="320" height="240" controls>
+                <source src="{{ vich_uploader_asset(video, 'videoFile') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video> 
+        {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+{% endblock %}

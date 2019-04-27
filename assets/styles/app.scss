@@ -2,11 +2,13 @@
 @import '~perfect-scrollbar/css/perfect-scrollbar.css';
 @import '~tingle.js/dist/tingle.min.css';
 @import '~glider-js/glider.min';
+@import '~@glidejs/glide/src/assets/sass/glide.core';
+@import '~@glidejs/glide/src/assets/sass/glide.theme';
 
 @import './front/common';
 @import './front/style';
-@import './front/home';
+@import './front/component/tingle';
 @import './front/layout/footer';
 @import './front/layout/header';
-
-@import './front/component/tingle';
+@import './front/home';
+@import './front/book/book';

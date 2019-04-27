@@ -18,4 +18,21 @@ class VideoRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Video::class);
     }
+
+    /**
+     * @param int $bookId
+     *
+     * @return Video[]|array
+     */
+    public function findAllForBookId(int $bookId): array
+    {
+        $queryBuilder = $this->createQueryBuilder('video');
+
+        $queryBuilder
+            ->andWhere('video.book = :bookId')
+            ->setParameter('bookId', $bookId)
+        ;
+
+        return $queryBuilder->getQuery()->getResult();
+    }
 }
