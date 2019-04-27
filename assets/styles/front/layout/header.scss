@@ -1,42 +1,59 @@
+#header-wrapper {
+    #background {
+        box-shadow: $color-shadow-wrapper 0 3rem 3rem 3rem;
+        border-radius: 0 0 50% 50% / 0 0 100% 100%;
+        height: 3rem;
+        margin-top: -4rem;
+        padding-bottom: 1rem;
+    }
 
-#header {
-    background: linear-gradient($color-background-header-1, $color-background-header-2);
-    border-radius: 0 0 50% 50% / 0 0 100% 100%;
-    box-shadow: $box-shadow;
-    margin: 0 auto;
-    width: 50vw;
-    margin-bottom: 1rem;
-    padding: 1.5rem;
-    text-align: center;
+    #header {
+        background: linear-gradient($color-background-header-1, $color-background-header-2);
+        border-radius: 0 0 50% 50% / 0 0 100% 100%;
+        box-shadow: $box-shadow;
+        margin: 0 auto;
+        width: 50vw;
+        margin-bottom: 1rem;
+        padding: 1.5rem;
+        text-align: center;
 
-    a {
-        img {
-            transition: 0.3s ease-in-out;
-            max-height: 100px;
-        }
+        a {
+            img {
+                transition: 0.3s ease-in-out;
+                max-height: 100px;
+            }
 
-        &:hover img {
-            transform: scaleY(1.2);
+            &:hover img {
+                transform: scaleY(1.2);
+            }
         }
     }
 }
 
 @media #{$media-medium}
 {
-    #header {
-        border-radius: 0 0 35% 35% / 0 0 100% 100%;
-        padding: 1rem;
+    #header-wrapper {
+        #header {
+            border-radius: 0 0 35% 35% / 0 0 100% 100%;
+            padding: 1rem;
 
-        a img {max-height: 80px;}
+            a img {max-height: 80px;}
+        }
     }
 }
 
 @media #{$media-small}
 {
-    #header {
-        border-radius: 0 0 20% 20% / 0 0 100% 100%;
-        padding: 0.5rem;
+    #header-wrapper {
+        #background {
+            box-shadow: $color-shadow-wrapper 0 2rem 2rem 1rem;
+        }
 
-        a img {max-height: 50px;}
+        #header {
+            border-radius: 0 0 20% 20% / 0 0 100% 100%;
+            padding: 0.5rem;
+
+            a img {max-height: 50px;}
+        }
     }
 }

@@ -10,18 +10,35 @@ Required :
 {% block body %}
 
     <div id="book-tabs">
-        <span data-tab="tab-slider" class="icon">
-            <i class="fas fa-camera fa-3x button" {{ slider ? '' : 'disabled' }}></i>
+        <span data-tab="tab-slider" class="button-icon" {{ slider ? '' : 'disabled' }}>
+            <span class="icon"><i class="fas fa-camera fa-3x"></i></span>
         </span>
         <span class="separator"></span>
-        <span data-tab="tab-videos" class="icon">
-            <i class="fas fa-video fa-3x button" {{ (videos|length > 0) ? '' : 'disabled' }}></i>
+        <span data-tab="tab-videos" class="button-icon" {{ (videos|length > 0) ? '' : 'disabled' }}>
+            <span class="icon"><i class="fas fa-video fa-3x"></i></span>
         </span>
     </div>
 
     {% if slider %}
     <div id="tab-slider" class="tab active">
         <div id="book-slider" class="glide">
+            <div id="slider-control" data-glide-el="controls">
+                <span class="button-icon" data-glide-dir="<<">
+                    <span class="icon"><i class="fas fa-angle-double-left fa-2x"></i></span>
+                </span>
+                <span class="button-icon" data-glide-dir="<">
+                    <span class="icon"><i class="fas fa-angle-left fa-2x"></i></span>
+                </span>
+                <span id="center-button" class="button-icon">
+                    <span class="icon"><i class="fas fa-2x fa-sort"></i></span>
+                </span>
+                <span class="button-icon" data-glide-dir=">">
+                    <span class="icon"><i class="fas fa-angle-right fa-2x"></i></span>
+                </span>
+                <span class="button-icon" data-glide-dir=">>">
+                    <span class="icon"><i class="fas fa-angle-double-right fa-2x"></i></span>
+                </span>
+            </div>
             <div class="glide__track" data-glide-el="track">
                 <ul class="glide__slides">
                     {% for picture in slider.pictures %}
@@ -31,20 +48,6 @@ Required :
                     {% endfor %}
                 </ul>
             </div>
-            <div id="slider-control" data-glide-el="controls">
-                <span data-glide-dir="<<">
-                    <span class="icon"><i class="fas fa-angle-double-left fa-2x button"></i></span>
-                </span>
-                <span data-glide-dir="<">
-                    <span class="icon"><i class="fas fa-angle-left fa-2x button"></i></span>
-                </span>
-                <span data-glide-dir=">">
-                    <span class="icon"><i class="fas fa-angle-right fa-2x button"></i></span>
-                </span>
-                <span data-glide-dir=">>">
-                    <span class="icon"><i class="fas fa-angle-double-right fa-2x button"></i></span>
-                </span>
-            </div>
         </div>
     </div>
     {% endif %}
@@ -53,10 +56,28 @@ Required :
     <div id="tab-videos" class="tab">
         <div id="book-videos">
         {% for video in videos %}
-            <video width="320" height="240" controls>
-                <source src="{{ vich_uploader_asset(video, 'videoFile') }}" type="video/mp4">
-                Your browser does not support the video tag.
-            </video> 
+            <div class="video-wrapper">
+                <video width="320" controls>
+                    <source src="{{ vich_uploader_asset(video, 'videoFile') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video> 
+            </div>
+        {% endfor %}
+        {% for video in videos %}
+            <div class="video-wrapper">
+                <video width="320" controls>
+                    <source src="{{ vich_uploader_asset(video, 'videoFile') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video> 
+            </div>
+        {% endfor %}
+        {% for video in videos %}
+            <div class="video-wrapper">
+                <video width="320" controls>
+                    <source src="{{ vich_uploader_asset(video, 'videoFile') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video> 
+            </div>
         {% endfor %}
         </div>
     </div>

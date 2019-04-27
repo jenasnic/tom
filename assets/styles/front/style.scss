@@ -99,6 +99,23 @@ input, select, textarea, button {
     }
 }
 
+.button-icon {
+    cursor: pointer;
+
+    .icon i {color: $color-text-button;}
+
+    &not([disabled]):hover, &.active {
+        .icon i {
+            text-shadow: $text-shadow;
+            color: $color-text-title;
+        }
+    }
+
+    &[disabled] {
+        .icon i {color: $color-text-disabled;}
+    }
+}
+
 .field {
     padding: 0.5rem 0;
 

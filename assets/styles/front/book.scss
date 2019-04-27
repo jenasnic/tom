@@ -3,12 +3,8 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: -2rem auto 2rem auto;
-    width: 70vw;
-
-    .button {
-        padding: 1rem;
-    }
+    margin: -2rem auto 1rem auto;
+    width: 55vw;
 
     .separator {
         border-bottom: 1px solid $color-border-container;
@@ -32,6 +28,7 @@
         text-align: center;
 
         img {
+            border: 5px solid $color-border-slider;
             max-height: 80vh;
             max-width: 80vw;
         }
@@ -41,6 +38,11 @@
         display: flex;
         flex-direction: row;
         justify-content: center;
+        margin-bottom: 1rem;
+
+        #center-button {
+            margin: 0 2rem;
+        }
 
         [data-glide-dir] {
             margin: 0.5rem;
@@ -51,12 +53,26 @@
 }
 
 #book-videos {
-    display: flex;
-    flex-direction: column;
     align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 960px;
+
+    .video-wrapper {
+        align-items: center;
+        background: url('../img/bg_metal_silver.png');
+        background-size: 400px 230px;
+        display: flex;
+        height: 230px;
+        justify-content: center;
+        margin: 1rem;
+        width: 400px;
+    }
 
     video {
-        border: 10px solid $color-border-media;
+        border: 2px solid $color-border-media;
         margin: 1rem auto;
     }
 }
@@ -71,7 +87,7 @@
         margin: 1rem auto 2rem auto;
         justify-content: center;
 
-        .button {margin: 0 1rem;}
+        .button-icon {margin: 0 1rem;}
 
         .separator {display: none;}
     }
