@@ -1,4 +1,5 @@
 import Glide from '@glidejs/glide'
+import { getOffsetElement } from '../component/position';
 
 const initBookTabs = () => {
     initTabActions();
@@ -6,7 +7,7 @@ const initBookTabs = () => {
 }
 
 const initTabActions = () => {
-    [...document.querySelectorAll('#book-tabs [data-tab]')].forEach(
+    [...document.querySelectorAll('#book-tabs [data-tab]:not([disabled])')].forEach(
         (element) => {
             element.addEventListener('click', () => {switchTab(element.dataset.tab);});
         }
@@ -24,7 +25,16 @@ const switchTab = (tabIdentifier) => {
 };
 
 const initSlider = () => {
-    new Glide('#book-slider').mount()
+    new Glide('#book-slider').mount();
+
+    document.getElementById('center-button').addEventListener('click', () => {
+        const offset = getOffsetElement(document.getElementById('book-slider'));
+        window.scroll({
+            top: offset.top,
+            left: offset.left,
+            behavior: 'smooth'
+        });
+    });
 };
 
 document.getElementById('book-tabs') && initBookTabs();

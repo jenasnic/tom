@@ -21,15 +21,13 @@
         padding-top: 5rem;
         margin-top: -2rem;
 
-        .book-item {
+        .glider-slide {
             align-items: center;
-            background: linear-gradient($color-background-card-1, $color-background-card-2);
-            border-radius: 2rem;
             display: flex;
             flex-direction: column;
-            margin: 1rem 2rem;
-            padding: 1rem;
+            justify-content: center;
             transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            padding-bottom: 1rem;
 
             &.left-1, &.right-1 {transform: translate(0, -50px);}
             &.left-2, &.right-2 {
@@ -37,14 +35,29 @@
                 opacity: 0;
             }
 
-            img {
-                max-width: 200px;
-                border: 10px solid $color-border-media;
-            }
+            .picture-wrapper {
+                align-items: center;
+                background: url('../img/bg_note.png');
+                background-size: 300px 315px;
+                display: flex;
+                flex-direction: column;
+                height: 235px;
+                padding-top: 80px;
+                width: 300px;
 
-            span {
-                padding: 1rem;
-                font-weight: bold;
+                img {
+                    border: 1px solid $color-border-media;
+                    border-radius: 5px;
+                    max-height: 160px;
+                    max-width: 240px;
+                }
+
+                span {
+                    color: $color-text-input;
+                    margin-top: 1.5rem;
+                    text-shadow: $text-shadow-dark;
+                    text-transform: uppercase;
+                }
             }
         }
     }

@@ -7,8 +7,8 @@ $color-background-default: #93CCD2;     // ~blue
 
 $color-background-header-1: #64B37C;    // ~green dark
 $color-background-header-2: #83F1A4;    // ~green light
-$color-background-card-1: #64B37C;    // ~green dark
-$color-background-card-2: #83F1A4;    // ~green light
+$color-background-card-1: #64B37C;      // ~green dark
+$color-background-card-2: #83F1A4;      // ~green light
 $color-background-input: #ECECEC;       // ~white
 
 $color-button-active-1: #D85317;        // ~rust dark
@@ -23,12 +23,16 @@ $color-border-active: #E46126;          // ~rust
 $color-border-default: #E46126;         // ~rust
 $color-border-input: #6F5E56;           // ~grey
 $color-border-popup: #6F5E56;           // ~grey
-$color-border-media: #FEFEFE;           // ~white
+$color-border-media: #363636;           // ~black
+$color-border-slider: #ECECEC;          // ~white
 
 $color-shadow-default: #333333;         // ~black light
 $color-shadow-dark: #000000;            // ~black
+$color-shadow-wrapper: #50AAB4;         // ~blue dark
 
+$color-text-button: #50AAB4;            // ~blue dark
 $color-text-default: #FFF0EB;           // ~white (rust light)
+$color-text-disabled: #BEBEBE;          // ~grey light
 $color-text-input: #333333;             // ~black light
 $color-text-link: #E46126;              // ~rust
 $color-text-title: #64B37C;             // ~green dark
