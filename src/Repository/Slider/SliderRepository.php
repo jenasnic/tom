@@ -32,4 +32,21 @@ class SliderRepository extends ServiceEntityRepository
 
         return $queryBuilder->getQuery()->getResult();
     }
+
+    /**
+     * @param int $bookId
+     *
+     * @return Slider|null
+     */
+    public function findOneForBookId(int $bookId): ?Slider
+    {
+        $queryBuilder = $this->createQueryBuilder('slider');
+
+        $queryBuilder
+            ->andWhere('slider.book = :bookId')
+            ->setParameter('bookId', $bookId)
+        ;
+
+        return $queryBuilder->getQuery()->getOneOrNullResult();
+    }
 }

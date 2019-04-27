@@ -1,5 +1,5 @@
 
-#book-wrapper {
+#book-glider-wrapper {
     border-left: 1px solid $color-border-container;
     border-right: 1px solid $color-border-container;
     margin: 0 auto;
@@ -23,37 +23,38 @@
 
         .book-item {
             align-items: center;
-            background: linear-gradient($color-button-default-1, $color-button-default-2);
+            background: linear-gradient($color-background-card-1, $color-background-card-2);
             border-radius: 2rem;
             display: flex;
             flex-direction: column;
             margin: 1rem 2rem;
+            padding: 1rem;
             transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-
-            img {
-                max-width: 200px;
-                border: 10px solid #fefefe;
-            }
-
-            span {
-                padding: 1rem;
-                font-weight: bold;
-            }
 
             &.left-1, &.right-1 {transform: translate(0, -50px);}
             &.left-2, &.right-2 {
                 transform: translate(0, -200px);
                 opacity: 0;
             }
+
+            img {
+                max-width: 200px;
+                border: 10px solid $color-border-media;
+            }
+
+            span {
+                padding: 1rem;
+                font-weight: bold;
+            }
         }
     }
 }
 
-#mobile-wrapper {display: none;}
+#book-glider-mobile {display: none;}
 
 @media #{$media-medium}
 {
-    #book-wrapper {
+    #book-glider-wrapper {
         width: 320px;
 
         #book-glider {
@@ -70,9 +71,9 @@
 
 @media #{$media-small}
 {
-    #book-wrapper {display: none;}
+    #book-glider-wrapper {display: none;}
 
-    #mobile-wrapper {
+    #book-glider-mobile {
         align-items: center;
         display: flex;
         flex-direction: column;

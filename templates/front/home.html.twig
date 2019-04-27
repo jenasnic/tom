@@ -1,13 +1,13 @@
 {#
 Required :
-- books : list of all books available (as array).
+- Book[] books : list of all books available.
 #}
 
 {% extends "base.html.twig" %}
 
 {% block body %}
 
-    <div id="book-wrapper">
+    <div id="book-glider-wrapper">
 
         <div class="arrow glider-prev">
             <span class="icon"><i class="fas fa-arrow-alt-circle-left fa-lg"></i></span>
@@ -21,13 +21,16 @@ Required :
                 <div class="book-item" data-rank="{{ loop.index0 }}">
                     <img src="{{ vich_uploader_asset(book, 'pictureFile') }}" alt="{{ book.name }}" />
                     <span>{{ book.name }}</span>
+                    <a href="{{ path('fo_book', { 'slug': book.slug }) }}">
+                        <span class="icon"><i class="fas fa-eye fa-3x button"></i></span>
+                    </a>
                 </div>
             {% endfor %}
         </div>
 
     </div>
 
-    <div id="mobile-wrapper">
+    <div id="book-glider-mobile">
         {% for book in books %}
             <div class="book-item" data-rank="{{ loop.index0 }}">
                 <img src="{{ vich_uploader_asset(book, 'pictureFile') }}" alt="{{ book.name }}" />
