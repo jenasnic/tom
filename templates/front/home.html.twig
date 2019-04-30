@@ -16,7 +16,7 @@ Required :
             <span class="icon"><i class="fas fa-arrow-alt-circle-right fa-lg"></i></span>
         </div>
 
-        <div id="book-glider" data-count="{{ books|length }}">
+        <div id="book-glider">
             {% for book in books %}
                 <div>
                     <div class="picture-wrapper">
@@ -34,7 +34,7 @@ Required :
 
     <div id="book-glider-mobile">
         {% for book in books %}
-            <div class="book-item" data-rank="{{ loop.index0 }}">
+            <div class="book-item">
                 <img src="{{ vich_uploader_asset(book, 'pictureFile') }}" alt="{{ book.name }}" />
                 <span>{{ book.name }}</span>
             </div>
