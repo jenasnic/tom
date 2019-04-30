@@ -79,6 +79,10 @@
 
 @media #{$media-medium}
 {
+    #book-videos {
+        flex-direction: column;
+        width: 100%;
+    }
 }
 
 @media #{$media-small}
@@ -90,5 +94,10 @@
         .button-icon {margin: 0 1rem;}
 
         .separator {display: none;}
+    }
+
+    #book-videos {
+        flex-direction: column;
+        width: 100%;
     }
 }

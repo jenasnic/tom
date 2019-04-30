@@ -1,0 +1,33 @@
+{#
+Required :
+- Slider slider : slider for current book.
+#}
+
+<div id="book-slider" class="glide">
+    <div id="slider-control" data-glide-el="controls">
+        <span class="button-icon" data-glide-dir="<<">
+            <span class="icon"><i class="fas fa-angle-double-left fa-2x"></i></span>
+        </span>
+        <span class="button-icon" data-glide-dir="<">
+            <span class="icon"><i class="fas fa-angle-left fa-2x"></i></span>
+        </span>
+        <span id="center-button" class="button-icon">
+            <span class="icon"><i class="fas fa-2x fa-sort"></i></span>
+        </span>
+        <span class="button-icon" data-glide-dir=">">
+            <span class="icon"><i class="fas fa-angle-right fa-2x"></i></span>
+        </span>
+        <span class="button-icon" data-glide-dir=">>">
+            <span class="icon"><i class="fas fa-angle-double-right fa-2x"></i></span>
+        </span>
+    </div>
+    <div class="glide__track" data-glide-el="track">
+        <ul class="glide__slides">
+            {% for picture in slider.pictures %}
+                <li class="slider-item glide__slide">
+                    <img src="{{ vich_uploader_asset(picture, 'pictureFile') }}" alt="{{ picture.title }}" />
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>

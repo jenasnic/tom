@@ -1,0 +1,15 @@
+{#
+Required :
+- Video[] videos : videos for current book.
+#}
+
+<div id="book-videos">
+    {% for video in videos %}
+        <div class="video-wrapper">
+            <video width="320" controls>
+                <source src="{{ vich_uploader_asset(video, 'videoFile') }}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video> 
+        </div>
+    {% endfor %}
+</div>

@@ -21,65 +21,13 @@ Required :
 
     {% if slider %}
     <div id="tab-slider" class="tab active">
-        <div id="book-slider" class="glide">
-            <div id="slider-control" data-glide-el="controls">
-                <span class="button-icon" data-glide-dir="<<">
-                    <span class="icon"><i class="fas fa-angle-double-left fa-2x"></i></span>
-                </span>
-                <span class="button-icon" data-glide-dir="<">
-                    <span class="icon"><i class="fas fa-angle-left fa-2x"></i></span>
-                </span>
-                <span id="center-button" class="button-icon">
-                    <span class="icon"><i class="fas fa-2x fa-sort"></i></span>
-                </span>
-                <span class="button-icon" data-glide-dir=">">
-                    <span class="icon"><i class="fas fa-angle-right fa-2x"></i></span>
-                </span>
-                <span class="button-icon" data-glide-dir=">>">
-                    <span class="icon"><i class="fas fa-angle-double-right fa-2x"></i></span>
-                </span>
-            </div>
-            <div class="glide__track" data-glide-el="track">
-                <ul class="glide__slides">
-                    {% for picture in slider.pictures %}
-                        <li class="slider-item glide__slide">
-                            <img src="{{ vich_uploader_asset(picture, 'pictureFile') }}" alt="{{ picture.title }}" />
-                        </li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
+        {% include 'front/book/_slider.html.twig' %}
     </div>
     {% endif %}
 
     {% if videos|length > 0 %}
     <div id="tab-videos" class="tab">
-        <div id="book-videos">
-        {% for video in videos %}
-            <div class="video-wrapper">
-                <video width="320" controls>
-                    <source src="{{ vich_uploader_asset(video, 'videoFile') }}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video> 
-            </div>
-        {% endfor %}
-        {% for video in videos %}
-            <div class="video-wrapper">
-                <video width="320" controls>
-                    <source src="{{ vich_uploader_asset(video, 'videoFile') }}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video> 
-            </div>
-        {% endfor %}
-        {% for video in videos %}
-            <div class="video-wrapper">
-                <video width="320" controls>
-                    <source src="{{ vich_uploader_asset(video, 'videoFile') }}" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video> 
-            </div>
-        {% endfor %}
-        </div>
+        {% include 'front/book/_videos.html.twig' %}
     </div>
     {% endif %}
 
