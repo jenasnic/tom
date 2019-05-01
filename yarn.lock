@@ -4809,11 +4809,6 @@ pbkdf2@^3.0.3:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-perfect-scrollbar@^1.4.0:
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/perfect-scrollbar/-/perfect-scrollbar-1.4.0.tgz#5d014ef9775e1f43058a1dbae9ed1daf0e7091f1"
-  integrity sha512-/2Sk/khljhdrsamjJYS5NjrH+GKEHEwh7zFSiYyxROyYKagkE4kSn2zDQDRTOMo8mpT2jikxx6yI1dG7lNP/hw==
-
 performance-now@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
@@ -6346,11 +6341,6 @@ timsort@^0.3.0:
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/timsort/-/timsort-0.3.0.tgz#405411a8e7e6339fe64db9a234de11dc31e02bd4"
   integrity sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
-
-tingle.js@^0.14.0:
-  version "0.14.0"
-  resolved "https://registry.yarnpkg.com/tingle.js/-/tingle.js-0.14.0.tgz#111bf8529f72484031b814b15e1a6ffb9dac2cee"
-  integrity sha512-etSON7XEz5QI5mvfAE+ibK9rOCouR0E7UpVeEkCfD0UFPY0+34fYGslyUH3b7g5PC5SZmfg9P93VSSvESacrpg==
 
 tmp@^0.0.33:
   version "0.0.33"

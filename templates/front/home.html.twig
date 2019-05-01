@@ -9,11 +9,11 @@ Required :
 
     <div id="book-glider-wrapper">
 
-        <div class="arrow glider-prev">
-            <span class="icon"><i class="fas fa-arrow-alt-circle-left fa-lg"></i></span>
+        <div class="arrow glider-prev button-icon">
+            <span class="icon"><i class="fas fa-arrow-alt-circle-left"></i></span>
         </div>
-        <div class="arrow glider-next">
-            <span class="icon"><i class="fas fa-arrow-alt-circle-right fa-lg"></i></span>
+        <div class="arrow glider-next button-icon">
+            <span class="icon"><i class="fas fa-arrow-alt-circle-right"></i></span>
         </div>
 
         <div id="book-glider">
@@ -24,7 +24,7 @@ Required :
                         <span>{{ book.name }}</span>
                     </div>
                     <a href="{{ path('fo_book', { 'slug': book.slug }) }}" class="button-icon">
-                        <span class="icon"><i class="fas fa-eye fa-3x"></i></span>
+                        <span class="icon"><i class="fas fa-eye"></i></span>
                     </a>
                 </div>
             {% endfor %}

@@ -2,52 +2,71 @@ import Glide from '@glidejs/glide'
 import { getOffsetElement } from '../component/position';
 
 class BookTabs {
-    slider;
+    glider;
+    sliderTab;
+    videosTab;
 
     constructor() {
-        this.slider = new Glide('#book-slider');
+        this.sliderTab = document.getElementById('tab-slider');
+        this.videosTab = document.getElementById('tab-videos');
+
         this.initActions();
-        this.showSlider();
+
+        if (this.sliderTab) {
+            this.showSlider();
+        } else if (this.videosTab) {
+            this.showVideos();
+        }
     };
 
     /**
      * Allows to initialize actions.
      */
     initActions() {
-        document
-            .querySelector('#book-tabs [data-tab="tab-slider"]:not([disabled]')
-            .addEventListener('click', () => { this.showSlider(); })
-        ;
-        document
-            .querySelector('#book-tabs [data-tab="tab-videos"]:not([disabled]')
-            .addEventListener('click', () => { this.showVideos(); })
-        ;
-        document.getElementById('center-button').addEventListener('click', () => {
-            const offset = getOffsetElement(document.getElementById('book-slider'));
-            window.scroll({
-                top: offset.top,
-                left: offset.left,
-                behavior: 'smooth'
+        if (this.sliderTab) {
+            document.querySelector('#book-tabs [data-tab="tab-slider"]').addEventListener(
+                    'click',
+                    () => { this.showSlider(); }
+            );
+
+            this.glider = new Glide('#book-slider');
+
+            document.getElementById('center-button') && document.getElementById('center-button').addEventListener('click', () => {
+                const offset = getOffsetElement(document.getElementById('book-slider'));
+                window.scroll({
+                    top: offset.top,
+                    left: offset.left,
+                    behavior: 'smooth'
+                });
             });
-        });
+        }
+
+        if (this.videosTab) {
+            document.querySelector('#book-tabs [data-tab="tab-videos"]').addEventListener(
+                'click',
+                () => { this.showVideos(); }
+            );
+        }
     };
 
     /**
      * Display slider tab.
      */
     showSlider() {
-        document.getElementById('tab-videos').classList.remove('active');
-        document.getElementById('tab-slider').classList.add('active');
-        this.slider.mount();
+        this.videosTab && this.videosTab.classList.remove('active');
+        this.sliderTab.classList.add('active');
+        this.glider.mount();
     };
 
     /**
      * Display videos tab.
      */
     showVideos() {
-        document.getElementById('tab-slider').classList.remove('active');
-        document.getElementById('tab-videos').classList.add('active');
-        this.slider.destroy();
+        if (this.sliderTab) {
+            this.sliderTab.classList.remove('active');
+            this.glider.destroy();
+        }
+        this.videosTab.classList.add('active');
     };
 }
 
