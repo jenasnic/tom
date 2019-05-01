@@ -80,39 +80,29 @@ input, select, textarea, button {
     padding: 0.5rem 1rem;
 }
 
-.button {
-    background: linear-gradient($color-button-default-1, $color-button-default-2);
-    border: 1px solid $color-border-container;
-    border-radius: 100%;
-    padding: 0.5rem;
-    box-shadow: $color-shadow-default 1px 2px;
-    color: $color-text-default;
-    cursor: pointer;
-
-    &:hover, &.active {
-        background: linear-gradient($color-button-active-1, $color-button-active-2);
-    }
-
-    &[disabled] {
-        background: linear-gradient($color-button-disabled-1, $color-button-disabled-2);
-        cursor: not-allowed;
-    }
-}
-
 .button-icon {
     cursor: pointer;
 
-    .icon i {color: $color-text-button;}
+    .icon i {
+        transition: 0.3s ease-in-out;
+        font-size: 3rem;
+    }
 
-    &not([disabled]):hover, &.active {
+    &:hover, &.active {
         .icon i {
+            color: $color-text-active;
             text-shadow: $text-shadow;
-            color: $color-text-title;
         }
     }
 
-    &[disabled] {
-        .icon i {color: $color-text-disabled;}
+    &[disabled], &.disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+
+        &:hover .icon i {
+            color: $color-text-default;
+            text-shadow: none;
+        }
     }
 }
 

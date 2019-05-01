@@ -6,6 +6,8 @@
     margin: -2rem auto 1rem auto;
     width: 55vw;
 
+    .button-icon {margin: 0 1rem;}
+
     .separator {
         border-bottom: 1px solid $color-border-container;
         flex-grow: 1;
@@ -45,7 +47,7 @@
         }
 
         [data-glide-dir] {
-            margin: 0.5rem;
+            margin: 0.5rem 1rem;
 
             .button {padding: 1rem;}
         }

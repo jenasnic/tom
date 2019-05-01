@@ -11,16 +11,16 @@ Required :
 
     <div id="book-tabs">
         <span data-tab="tab-slider" class="button-icon" {{ slider ? '' : 'disabled' }}>
-            <span class="icon"><i class="fas fa-camera fa-3x"></i></span>
+            <span class="icon"><i class="fas fa-camera"></i></span>
         </span>
         <span class="separator"></span>
         <span data-tab="tab-videos" class="button-icon" {{ (videos|length > 0) ? '' : 'disabled' }}>
-            <span class="icon"><i class="fas fa-video fa-3x"></i></span>
+            <span class="icon"><i class="fas fa-video"></i></span>
         </span>
     </div>
 
     {% if slider %}
-    <div id="tab-slider" class="tab active">
+    <div id="tab-slider" class="tab">
         {% include 'front/book/_slider.html.twig' %}
     </div>
     {% endif %}
