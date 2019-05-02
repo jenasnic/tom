@@ -105,6 +105,12 @@
             span {
                 padding: 0.5rem;
                 font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            &:hover {
+                span {color: $color-text-active;}
+                img {border-color: $color-text-active;}
             }
         }
     }

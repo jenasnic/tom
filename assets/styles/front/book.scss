@@ -31,6 +31,7 @@
 
         img {
             border: 5px solid $color-border-slider;
+            box-shadow: $box-shadow-deeper;
             max-height: 80vh;
             max-width: 80vw;
         }
@@ -65,9 +66,9 @@
     .video-wrapper {
         align-items: center;
         background: url('../img/bg_metal_silver.png');
-        background-size: 400px 230px;
+        background-size: 400px 233px;
         display: flex;
-        height: 230px;
+        height: 233px;
         justify-content: center;
         margin: 1rem;
         width: 400px;

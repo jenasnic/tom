@@ -34,10 +34,10 @@ Required :
 
     <div id="book-glider-mobile">
         {% for book in books %}
-            <div class="book-item">
+            <a href="{{ path('fo_book', { 'slug': book.slug }) }}" class="book-item">
                 <img src="{{ vich_uploader_asset(book, 'pictureFile') }}" alt="{{ book.name }}" />
                 <span>{{ book.name }}</span>
-            </div>
+            </a>
         {% endfor %}
     </div>
 
