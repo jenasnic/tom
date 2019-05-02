@@ -62,10 +62,7 @@ class BookTabs {
      * Display videos tab.
      */
     showVideos() {
-        if (this.sliderTab) {
-            this.sliderTab.classList.remove('active');
-            this.glider.destroy();
-        }
+        this.sliderTab && this.sliderTab.classList.remove('active');
         this.videosTab.classList.add('active');
     };
 }
