@@ -10,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
 class UserController extends AbstractController
@@ -40,6 +41,7 @@ class UserController extends AbstractController
     public function addOrEditAction(
         Request $request,
         EntityManagerInterface $entityManager,
+        UserPasswordEncoderInterface $passwordEncoder,
         TranslatorInterface $translator,
         User $user = null
     ): Response {
@@ -52,6 +54,11 @@ class UserController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             try {
+                $newPassword = $form->get('newPassword')->getData();
+                if (null !== $newPassword) {
+                    $user->setPassword($passwordEncoder->encodePassword($user, $newPassword));
+                }
+
                 $entityManager->persist($user);
                 $entityManager->flush();
 
